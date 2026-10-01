@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  background: #0a0a14;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px currentColor); }
+  50% { filter: drop-shadow(0 0 20px currentColor); }
+}
+
+.animate-float-up {
+  animation: floatUp 0.9s ease-out forwards;
+}
+
+.pulse-glow {
+  animation: pulseGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.title-shimmer {
+  background-size: 200% auto;
+  animation: titleShimmer 3s linear infinite;
+}
+
+@keyframes hintFade {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  12% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  75% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -60%) scale(0.95); }
+}
